@@ -71,7 +71,7 @@ variable "s3_bucket_encryption_enabled" {
   description = "When set to 'true' the 'aws_s3_bucket' resource will have AES256 encryption enabled by default"
 }
 
-variable "create_txt" {
+variable "enable_txt" {
   type    = bool
   default = true
 }
