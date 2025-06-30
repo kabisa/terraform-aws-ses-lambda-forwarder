@@ -22,6 +22,8 @@ resource "aws_route53_record" "mx" {
 
 # Add Route53 TXT record for SPF
 resource "aws_route53_record" "txt" {
+  count = var.enable_txt ? 1 : 0
+
   zone_id = data.aws_route53_zone.default.zone_id
   name    = aws_ses_domain_identity.default.id
   type    = "TXT"
